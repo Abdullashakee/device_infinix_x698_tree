@@ -138,6 +138,10 @@ TARGET_SCREEN_DENSITY := 440
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# DT2W
+PRODUCT_PACKAGES += \
+    DT2W-Service-Fleur
+    
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
