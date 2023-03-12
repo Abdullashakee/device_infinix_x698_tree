@@ -1210,3 +1210,9 @@ on  property:vendor.elliptic.sensor.test=1
     start ellipticSensorTest
 on  property:vendor.elliptic.sensor.test=0
     stop ellipticSensorTest
+
+on property:persist.sys.fleur.dt2w=0
+    write /proc/tp_gesture 0
+
+on property:persist.sys.fleur.dt2w=1
+    write /proc/tp_gesture 1
