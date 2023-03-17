@@ -233,6 +233,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.enableswap \
+    fstab.mt6781 \
     init.ago.rc \
     factory_init.rc \
     init.aee.rc \
@@ -260,7 +261,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.enableswap
+    $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.enableswap \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6781:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6781
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
