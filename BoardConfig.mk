@@ -121,6 +121,7 @@ BOARD_PREBUILT_VENDORIMAGE := device/xiaomi/fleur/prebuilts/vendor.img
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6781
+BOARD_HAS_MTK_HARDWARE := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
