@@ -4,7 +4,7 @@
 //
 
 runtime_resource_overlay {
-    name: "TelephonyOverlayViva",
+    name: "CarrierConfigOverlayFleur",
     sdk_version: "current",
     vendor: true,
     resource_dirs: ["res"]

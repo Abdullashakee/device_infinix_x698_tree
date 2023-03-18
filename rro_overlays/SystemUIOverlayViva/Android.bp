@@ -2,8 +2,9 @@
 // Copyright (C) 2022 ArrowOS
 // SPDX-License-Identifier: Apache-2.0
 //
+
 runtime_resource_overlay {
-    name: "SettingsResOverlayViva",
+    name: "SystemUIOverlayFleur",
     sdk_version: "current",
     vendor: true,
     resource_dirs: ["res"]
