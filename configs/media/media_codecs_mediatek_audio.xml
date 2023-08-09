@@ -86,9 +86,11 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.MTK.AUDIO.DECODER.GSM" type="audio/gsm" >
             <Limit name="channel-count" max="1" />
         </MediaCodec>
-        <MediaCodec name="OMX.MTK.AUDIO.DECODER.WMA" type="audio/x-ms-wma" >
-            <Limit name="channel-count" max="2" />
-        </MediaCodec>
+        <!--TCD:delete wma XLQLHBW-1453 by lichen.yu 20211223 start-->
+        <!--<MediaCodec name="OMX.MTK.AUDIO.DECODER.WMA" type="audio/x-ms-wma" >-->
+        <!--<Limit name="channel-count" max="2" />-->
+        <!--</MediaCodec>-->
+        <!--TCD:delete wma XLQLHBW-1453 by lichen.yu 20211223 end-->
         <MediaCodec name="OMX.MTK.AUDIO.DECODER.ADPCM.MS" type="audio/x-adpcm-ms" >
             <Limit name="channel-count" max="8" />
         </MediaCodec>
