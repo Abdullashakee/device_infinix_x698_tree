@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
-DEVICE_PATH := device/xiaomi/fleur
+DEVICE_PATH := device/infinix/x6827
 
 # APN
 PRODUCT_COPY_FILES += \
@@ -149,7 +149,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.fleur
+    android.hardware.biometrics.fingerprint@2.1-service.x6827
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
@@ -312,4 +312,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/fleur/fleur-vendor.mk)
+$(call inherit-product, vendor/infinix/x6827/x6827-vendor.mk)

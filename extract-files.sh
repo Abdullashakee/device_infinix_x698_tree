@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=fleur
-VENDOR=xiaomi
+DEVICE=x6827
+VENDOR=infinix
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -55,8 +55,8 @@ fi
 
 function blob_fixup {
     case "$1" in
-        vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod)
-            "${PATCHELF}" --add-needed "libshim_beanpod.so" "${2}"
+        vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic)
+            "${PATCHELF}" --add-needed "libshim_trustonic.so" "${2}"
             ;;
         lib/libsink.so)
             "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"

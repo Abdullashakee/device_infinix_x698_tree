@@ -5,8 +5,8 @@
 //
 
 cc_library_shared {
-    name: "libshim_beanpod",
-    srcs: ["libshim_beanpod.cpp"],
+    name: "libshim_trustonic",
+    srcs: ["libshim_trustonic.cpp"],
     vendor: true,
     shared_libs: [
         "libkeymaster_messages",
