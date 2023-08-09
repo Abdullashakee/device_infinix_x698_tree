@@ -276,7 +276,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Symbols
 PRODUCT_PACKAGES += \
-    libshim_beanpod \
+    libshim_trustonic \
     libshim_showlogo
 
 # Seccomp
