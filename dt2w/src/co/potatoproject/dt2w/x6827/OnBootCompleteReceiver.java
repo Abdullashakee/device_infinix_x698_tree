@@ -1,4 +1,4 @@
-package co.potatoproject.dt2w.fleur;
+package co.potatoproject.dt2w.x6827;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -137,7 +137,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # DT2W
 PRODUCT_PACKAGES += \
-    DT2W-Service-Fleur
+    DT2W-Service-X6827
     
 # fastbootd
 PRODUCT_PACKAGES += \

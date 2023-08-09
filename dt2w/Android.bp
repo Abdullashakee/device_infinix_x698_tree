@@ -15,7 +15,7 @@
  */
 
 android_app {
-    name: "DT2W-Service-Fleur",
+    name: "DT2W-Service-X6827",
 
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
@@ -29,13 +29,13 @@ android_app {
     },
 
     required: [
-        "privapp-permissions_co.potatoproject.dt2w.fleur"
+        "privapp-permissions_co.potatoproject.dt2w.x6827"
     ]
 }
 
 prebuilt_etc {
-    name: "privapp-permissions_co.potatoproject.dt2w.fleur",
+    name: "privapp-permissions_co.potatoproject.dt2w.x6827",
     sub_dir: "permissions",
-    src: "privapp-permissions_co.potatoproject.dt2w.fleur.xml",
+    src: "privapp-permissions_co.potatoproject.dt2w.x6827.xml",
     filename_from_src: true,
 }
