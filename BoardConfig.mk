@@ -118,7 +118,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
 
 # Prebuilt vendor
-BOARD_PREBUILT_VENDORIMAGE := device/infinix/x6827/prebuilts/vendor.img
+TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS := true
+BUILD_WITHOUT_VENDOR := true
+BOARD_PREBUILT_VENDORIMAGE := $(DEVICE_PATH)/prebuilts/vendor.img
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6781
