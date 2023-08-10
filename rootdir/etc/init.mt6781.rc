@@ -66,19 +66,21 @@ on late-init
 
 # mount different fs start
 
+
 on charger
+    #Set CPU/Dram init parameter
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
-    exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
-    mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
+    exec /system/bin/e2fsck -f -p /dev/block/by-name/cache
+    mount ext4 /dev/block/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
     chmod 0666 /dev/kmsg
     chmod 0775 /mnt/vendor
     mkdir /mnt/vendor/nvcfg
-    mount ext4 /dev/block/platform/bootdevice/by-name/nvcfg /mnt/vendor/nvcfg rw wait
+    mount ext4 /dev/block/by-name/nvcfg /mnt/vendor/nvcfg rw wait
     chown system system /mnt/vendor/nvcfg
     chmod 0771 /mnt/vendor/nvcfg
     restorecon_recursive /mnt/vendor/nvcfg
@@ -94,15 +96,17 @@ on charger
     chmod 0660 /sys/power/wake_lock
     chmod 0660 /sys/power/wake_unlock
     chmod 0660 /sys/power/wakeup_count
-    write /sys/power/pm_async 0
     write /sys/power/pm_freeze_timeout 2000
+
     start fuelgauged
     start fuelgauged_nvram
-	start mi_thermald
 
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/lcd-backlight/max_brightness
+    chown system system /sys/class/leds/lcd-backlight/max_brightness
+    chmod 0664 /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/brightness
 
     start vendor.light-default
 
@@ -649,7 +653,15 @@ on post-fs-data
     #Creat charger log
     mkdir /data/vendor/charge_logger 0775 system system
 
+
     #Camera
+    #MEG-HDR-LLDHR
+    mkdir /data/vendor/meg_working_dir 0777 system system
+    mkdir /data/vendor/meg_working_dir/anc_yuvhdr 0777 system system
+    mkdir /data/vendor/meg_working_dir/anc_yuvllhdr 0777 system system
+    mkdir /data/vendor/meg_working_dir/anc_fullhdr 0777 system system
+    #watermark 2.0
+    mkdir /data/vendor/camera_watermark 0777 system system
     chmod 0660 /dev/camera-sysram
     chmod 0660 /dev/camera-isp
     chmod 0660 /dev/camera-dip
@@ -672,7 +684,26 @@ on post-fs-data
     chmod 0660 /dev/MAIN3AF
     chmod 0660 /dev/SUBAF
     chmod 0660 /dev/vpu
+    
+        #Laser
+    chmod 0660 /dev/cwvi5300
+    chmod 0664 /sys/devices/virtual/laser/laser/enable_cali_sensor
+    chmod 0666 /sys/devices/virtual/laser/laser/calibration_data
+    chmod 0666 /sys/devices/virtual/laser/laser/enable_ps_sensor
+    chmod 0666 /sys/devices/virtual/laser/laser/laser_sensor_info
 
+    #OIS
+    chmod 0660 /dev/dw9781_ois
+    #DualCam
+    mkdir /data/vendor/arcsoft 0777 system system
+    #tranDualCam
+    mkdir /data/vendor/multicam  0777 system system
+    mkdir /data/vendor/multicam/dualcam  0777 system system
+    #tranSAT
+    mkdir /data/vendor/multicam/sat  0777 system system
+    mkdir /data/vendor/laser 0777 system system
+
+    mkdir /data/vendor/meghumaneffect 0777 system system
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
     chown system camera /dev/camera-dip
@@ -695,6 +726,18 @@ on post-fs-data
     chown system camera /dev/MAIN3AF
     chown system camera /dev/SUBAF
     chown system camera /dev/vpu
+
+    #OIS
+    chown system camera /dev/dw9781_ois
+    #Fake DualCam
+    chown root root /sys/class/main2_light/main2_light/main2_light
+    chmod 0666 /sys/class/main2_light/main2_light/main2_light
+
+    #Laser
+    chown system camera /dev/cwvi5300
+    chown system system /sys/devices/virtual/laser/laser/enable_cali_sensor
+    chown system system /sys/devices/virtual/laser/laser/calibration_data
+    chown system system /sys/devices/virtual/laser/laser/enable_ps_sensor
 
     #CCU
     chmod 0660 /dev/ccu
@@ -1154,7 +1197,7 @@ service factory_no_image /vendor/bin/factory
     capabilities BLOCK_SUSPEND NET_RAW NET_ADMIN SYS_ADMIN SYS_BOOT
     socket factory-atci stream 660 radio system
     disabled
-    oneshot
+    oneshot	
 
 # start meta_tst for ATM
 on property:sys.boot_completed=1 && property:ro.boot.atm=enable
@@ -1164,19 +1207,12 @@ on property:sys.boot_completed=1 && property:ro.boot.atm=enable
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
 
-#2019.12.30 tianyajun add pocket mode
-on property:odm.pocket.mode.keygurad.locked=1
-    write /proc/tp_palm 1
-
-on property:odm.pocket.mode.keygurad.locked=0
-    write /proc/tp_palm 0
-#add mi_thermald for thermal
-service mi_thermald /system/vendor/bin/mi_thermald
-	class main
-	user root
-	group system
-	seclabel u:r:mi_thermald:s0
-
+# for bokeh control
+on property:vendor.camera.bokeh.disable=1
+    setprop vendor.camera.bokeh 1
+on property:vendor.camera.bokeh.disable=0
+    setprop vendor.camera.bokeh 0
+    
 # FPSGO FBT Game
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
@@ -1211,8 +1247,8 @@ on  property:vendor.elliptic.sensor.test=1
 on  property:vendor.elliptic.sensor.test=0
     stop ellipticSensorTest
 
-on property:persist.sys.fleur.dt2w=0
+on property:persist.sys.x6827.dt2w=0
     write /proc/tp_gesture 0
 
-on property:persist.sys.fleur.dt2w=1
+on property:persist.sys.x6827.dt2w=1
     write /proc/tp_gesture 1

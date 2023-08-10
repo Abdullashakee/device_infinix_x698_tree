@@ -1,5 +1,5 @@
 # Biometrics
-/system/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.fleur u:object_r:hal_fingerprint_fleur_exec:s0
+/system/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.x6827 u:object_r:hal_fingerprint_x6827_exec:s0
 
 # Light Hal
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.lights-service\.mediatek u:object_r:hal_light_default_exec:s0
