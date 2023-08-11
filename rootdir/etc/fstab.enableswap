@@ -1,1 +1,1 @@
-/dev/block/zram0     none     swap     defaults     zramsize=55%
+/data/swapfile.db     none     swap     defaults     swapfile_size=3072m

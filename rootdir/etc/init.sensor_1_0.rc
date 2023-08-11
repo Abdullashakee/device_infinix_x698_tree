@@ -5,9 +5,9 @@ on post-fs-data
     # Sensor
     chmod 0660 /dev/hwmsensor
     chmod 0660 /dev/msensor
-    chmod 0666 /dev/gsensor
-    chmod 0666 /dev/als_ps
-    chmod 0666 /dev/gyroscope
+    chmod 0660 /dev/gsensor
+    chmod 0660 /dev/als_ps
+    chmod 0660 /dev/gyroscope
     chmod 0660 /dev/aal_als
     chmod 0660 /dev/humidity
     chmod 0660 /dev/barometer
