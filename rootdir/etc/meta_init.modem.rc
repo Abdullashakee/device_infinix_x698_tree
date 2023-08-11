@@ -25,8 +25,6 @@ on post-fs-data
     restorecon_recursive /mnt/vendor/protect_f
     restorecon_recursive /mnt/vendor/protect_s
 
-    restorecon_recursive /mnt/rescue
-
     # Encrypt phone function
     setprop vold.post_fs_data_done 1
 

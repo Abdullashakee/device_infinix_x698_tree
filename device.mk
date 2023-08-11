@@ -228,31 +228,30 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.enableswap \
     fstab.mt6781 \
-    init.ago.rc \
-    factory_init.rc \
-    init.aee.rc \
-    multi_init.rc \
-    meta_init.connectivity.rc \
-    init.mt6781.rc \
     meta_init.project.rc \
-    init.stnfc.rc \
-    init.connectivity.common.rc \
-    meta_init.rc \
-    meta_init.connectivity.common.rc \
-    init.connectivity.rc \
-    init.project.rc \
-    factory_init.connectivity.common.rc \
-    init.modem.rc \
-    init.mt6781.usb.rc \
-    meta_init.modem.rc \
+    init.sensor_1_0.rc \
+    multi_init.rc \
+    init.mt6781.rc \
     init_connectivity.rc \
     factory_init.project.rc \
     factory_init.connectivity.rc \
-    init.sensor_1_0.rc \
+    init.modem.rc \
+    init.project.rc \
+    init.ago.rc \
+    meta_init.connectivity.common.rc \
+    meta_init.modem.rc \
+    init.aee.rc \
+    meta_init.rc \
+    factory_init.connectivity.common.rc \
+    meta_init.vendor.rc \
+    init.mt6781.usb.rc \
+    init.connectivity.common.rc \
+    factory_init.rc \
+    init.connectivity.rc \
+    meta_init.connectivity.rc \
     init.cgroup.rc \
-    init.recovery.mt6781.rc \
-    init.recovery.hardware.rc \
-    init.target.rc \
+    init.recovery.mt6781.rc
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.enableswap \
