@@ -195,6 +195,11 @@ PRODUCT_PACKAGES += \
     TetheringOverlayViva \
     WifiOverlayViva
 
+# RcsService
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
