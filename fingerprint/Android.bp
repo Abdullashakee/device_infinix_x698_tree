@@ -1,5 +1,5 @@
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.x6827",
+    name: "android.hardware.biometrics.fingerprint@2.1-service.x698",
     defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.rc"],
     vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.xml"],
