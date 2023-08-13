@@ -1,4 +1,4 @@
-package co.potatoproject.dt2w.x6827;
+package co.potatoproject.dt2w.x698;
 
 import android.app.Service;
 import android.content.ContentResolver;
@@ -13,8 +13,8 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings.Secure;
 
-public class DT2WServiceX6827 extends Service {
-    private static final String TAG = "DT2WServiceX6827";
+public class DT2WServiceX698 extends Service {
+    private static final String TAG = "DT2WServiceX698";
     private Context mContext;
     private Handler mHandler;
     private CustomSettingsObserver mCustomSettingsObserver;
