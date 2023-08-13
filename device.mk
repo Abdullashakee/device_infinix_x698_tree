@@ -232,24 +232,18 @@ PRODUCT_PACKAGES += \
     init.sensor_1_0.rc \
     multi_init.rc \
     init.mt6781.rc \
-    init_connectivity.rc \
     factory_init.project.rc \
     factory_init.connectivity.rc \
     init.modem.rc \
     init.project.rc \
     init.ago.rc \
-    meta_init.connectivity.common.rc \
     meta_init.modem.rc \
     init.aee.rc \
     meta_init.rc \
-    factory_init.connectivity.common.rc \
-    meta_init.vendor.rc \
     init.mt6781.usb.rc \
-    init.connectivity.common.rc \
     factory_init.rc \
     init.connectivity.rc \
     meta_init.connectivity.rc \
-    init.cgroup.rc \
     init.recovery.mt6781.rc
 
 
