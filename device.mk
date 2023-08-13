@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
-DEVICE_PATH := device/infinix/x6827
+DEVICE_PATH := device/infinix/x698
 
 # APN
 PRODUCT_COPY_FILES += \
@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
     libsuspend
 
 # Display Resolution
-TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_HEIGHT := 2460
 TARGET_SCREEN_WIDTH := 1080
 
 # Display Density
@@ -137,7 +137,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # DT2W
 PRODUCT_PACKAGES += \
-    DT2W-Service-X6827
+    DT2W-Service-X698
     
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.x6827
+    android.hardware.biometrics.fingerprint@2.1-service.x698
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
