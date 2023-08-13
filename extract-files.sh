@@ -55,7 +55,7 @@ fi
 
 function blob_fixup {
     case "$1" in
-        vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic)
+        vendor/bin/hw/android.hardware.keymaster@4.0-service.trustonic)
             "${PATCHELF}" --add-needed "libshim_trustonic.so" "${2}"
             ;;
         lib/libsink.so)
