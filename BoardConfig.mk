@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/x6827
+DEVICE_PATH := device/infinix/x698
 
 # A/B
 AB_OTA_UPDATER := true
