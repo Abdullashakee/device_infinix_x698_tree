@@ -14,10 +14,10 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from Infinix-X6827 device
 $(call inherit-product, device/infinix/x6827/device.mk)
 
-PRODUCT_DEVICE := x6827
-PRODUCT_NAME := lineage_x6827
+PRODUCT_DEVICE := x698
+PRODUCT_NAME := lineage_x698
 PRODUCT_BRAND := Infinix
-PRODUCT_MODEL := x6827
+PRODUCT_MODEL := x698
 PRODUCT_MANUFACTURER := Infinix
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
@@ -25,4 +25,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-transsion
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sys_tssi_64_infinix-user 12 SP1A.210812.016 353179 release-keys"
 
-BUILD_FINGERPRINT := Infinix/X6827-OP/Infinix-X6827:12/SP1A.210812.016/230613V911:user/release-keys
+BUILD_FINGERPRINT := Infinix/X698-OP/Infinix-X698:12/SP1A.210812.016/230613V911:user/release-keys
