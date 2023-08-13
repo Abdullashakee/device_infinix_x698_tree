@@ -15,7 +15,7 @@
  */
 
 android_app {
-    name: "DT2W-Service-X6827",
+    name: "DT2W-Service-X698",
 
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
@@ -29,13 +29,13 @@ android_app {
     },
 
     required: [
-        "privapp-permissions_co.potatoproject.dt2w.x6827"
+        "privapp-permissions_co.potatoproject.dt2w.x698"
     ]
 }
 
 prebuilt_etc {
-    name: "privapp-permissions_co.potatoproject.dt2w.x6827",
+    name: "privapp-permissions_co.potatoproject.dt2w.x698",
     sub_dir: "permissions",
-    src: "privapp-permissions_co.potatoproject.dt2w.x6827.xml",
+    src: "privapp-permissions_co.potatoproject.dt2w.x698.xml",
     filename_from_src: true,
 }
