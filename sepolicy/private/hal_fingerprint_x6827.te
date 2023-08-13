@@ -1,6 +1,6 @@
-type hal_fingerprint_x6827, domain;
-hal_client_domain(hal_fingerprint_x6827, hal_fingerprint)
-hal_server_domain(hal_fingerprint_x6827, hal_fingerprint)
+type hal_fingerprint_x698, domain;
+hal_client_domain(hal_fingerprint_x698, hal_fingerprint)
+hal_server_domain(hal_fingerprint_x698, hal_fingerprint)
 
 type hal_fingerprint_x6827_exec, system_file_type, exec_type, file_type;
-init_daemon_domain(hal_fingerprint_x6827)
+init_daemon_domain(hal_fingerprint_x698)
