@@ -1,4 +1,4 @@
-# Android device tree for Redmi fleur (fleur)
+# Android device tree for infinix note 11s (X698)
 
 ```
 #
